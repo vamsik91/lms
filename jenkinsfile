@@ -1,0 +1,15 @@
+  pipeline 
+  {
+      agent (label 'Slave')
+      {
+        stages {
+          stage('Git clone the code') 
+          {
+              steps {
+                git 'https://github.com/vamsik91/lms.git'
+              
+                  }
+          }
+                }
+      }
+  }
