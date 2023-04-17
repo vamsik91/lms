@@ -1,14 +1,14 @@
-Jenkins file 
+#Jenkins file 
 pipeline {
     agent{
-       label 'docker'
+       label 'Slave'
     }
 
     environment {
 
-    DOCKERHUB_CREDENTIALS = credentials('dockerusermubeen')
-     registry = "mubeen507/backend-lms"
-        registryCredential = 'dockerusermubeen'
+    DOCKERHUB_CREDENTIALS = credentials('dockeruservamsik91')
+     registry = "vamsik91/backend-lms"
+        registryCredential = 'dockeruservamsik91'
         dockerImage = ''
     }
 
@@ -17,7 +17,7 @@ pipeline {
         
         stage('Building the docker image') {
             steps {
-                sh 'cd api && docker build -t mubeen507/backend-lms .'
+                sh 'cd api && docker build -t vamsik91/backend-lms .'
             }
         }
         stage('Logging into dockerhub account') {
@@ -27,12 +27,12 @@ pipeline {
         }
         stage('pushing the docker image into dockerhub') {
             steps {
-                  sh 'docker push mubeen507/backend-lms'
+                  sh 'docker push vamsik91/backend-lms'
             }
         }
         stage('Remove old docker images') {
              steps {
-                 sh 'docker rmi -f mubeen507/backend-lms'
+                 sh 'docker rmi -f vamsik91/backend-lms'
             }
         }
          stage('creating database container') {
