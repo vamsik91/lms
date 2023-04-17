@@ -10,7 +10,7 @@ pipeline {
      //registry = "vamsik91/backend-lms"
         //registryCredential = 'dockeruservamsik91'
         //dockerImage = ''
-    }
+    //}
 
     stages {
         
@@ -57,5 +57,5 @@ pipeline {
 //                   sh 'docker run -d -p 8080:8080 --network lmsnetwork -e DATABASE_URL=postgresql://postgres:password@lmsdb:5432/postgres --name backend -e PORT=8080 -e MODE=local  mubeen507/backend-lms'
 //             }
 //         }
-//     }
-// }
+     }
+ }
